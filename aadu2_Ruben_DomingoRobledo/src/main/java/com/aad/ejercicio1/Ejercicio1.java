@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Ejercicio1 {
 	public static void main(String[] args) {
 		try {
-			//Agregamos primero la dependecia de la h2database en el pom.xml		--
+			//Agregamos primero la dependecia de la h2database en el pom.xml
 			
 			Class.forName("org.h2.Driver");
 			Connection conn= DriverManager.getConnection("jdbc:h2:"+"./Database/AADU2"+"Ruben"+"Alcobendas99");
