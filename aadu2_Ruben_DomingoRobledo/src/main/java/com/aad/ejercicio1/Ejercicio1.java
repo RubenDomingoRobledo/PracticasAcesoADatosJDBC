@@ -10,8 +10,6 @@ public class Ejercicio1 {
 	public static void main(String[] args) {
 		try {
 			//Agregamos primero la dependecia de la h2database en el pom.xml
-			
-			Class.forName("org.h2.Driver");
 			Connection conn= DriverManager.getConnection("jdbc:h2:"+"./Database/AADU2"+"Ruben"+"Alcobendas99");
 			Statement st = conn.createStatement();
 			
@@ -54,10 +52,8 @@ public class Ejercicio1 {
 			        System.out.println("Apellido: " + rs2.getString("apellido"));
 			        System.out.println("Modulo: " + rs2.getString("modulo"));
 			 }
+			 st.close();
 			 conn.close();
-		} 
-		catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} 
 		catch (SQLException e) {
 			e.printStackTrace();

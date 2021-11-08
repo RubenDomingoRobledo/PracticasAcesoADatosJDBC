@@ -49,6 +49,7 @@ public class Ejercicio3 {
 	            conn.commit();
 	            System.out.println("Datos insertados y transacción acabada"); 
 	            bf.close();
+	            stmnt.close();
 	            conn.close();
 	    } 
 	    catch (SQLException e) {
