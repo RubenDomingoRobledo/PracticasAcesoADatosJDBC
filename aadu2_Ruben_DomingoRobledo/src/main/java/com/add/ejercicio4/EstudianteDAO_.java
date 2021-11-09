@@ -51,6 +51,25 @@ public class EstudianteDAO_ implements EstudianteDAO{
 		}		
 		return eliminar;
 	}
+	
+	public Estudiante read(Integer id) {
+		Estudiante estudiante = new Estudiante();
+		try {
+			Connection conn=Conexion.conectar();
+			Statement stm=conn.createStatement();
+			ResultSet rs= stm.executeQuery("SELECT * FROM estudiantes WHERE id ='"+id+"'");
+			while (rs.next()) {
+				estudiante.setId(rs.getInt("id"));
+				estudiante.setNombre(rs.getString("nombre"));
+				estudiante.setApellido(rs.getString("apellido"));
+				estudiante.setModulo(rs.getString("modulo"));
+			}
+		}	
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return estudiante;
+	}
 
 	@Override
 	public List<Estudiante> findAll() {
@@ -60,12 +79,12 @@ public class EstudianteDAO_ implements EstudianteDAO{
 			Statement stm=conn.createStatement();
 			ResultSet rs= stm.executeQuery("SELECT * FROM estudiantes");
 			while (rs.next()) {
-				Estudiante e=new Estudiante();
-				e.setId(rs.getInt(1));
-				e.setNombre(rs.getString(2));
-				e.setApellido(rs.getString(3));
-				e.setApellido(rs.getString(4));
-				listaEstudiantes.add(e);
+				Estudiante estudiante=new Estudiante();
+				estudiante.setId(rs.getInt("id"));
+				estudiante.setNombre(rs.getString("nombre"));
+				estudiante.setApellido(rs.getString("apellido"));
+				estudiante.setModulo(rs.getString("modulo"));
+				listaEstudiantes.add(estudiante);
 			}
 			stm.close();
 			rs.close();
@@ -85,12 +104,12 @@ public class EstudianteDAO_ implements EstudianteDAO{
 			Statement stm=conn.createStatement();
 			ResultSet rs= stm.executeQuery("SELECT * FROM estudiantes WHERE nombre ='"+name+"'");
 			while (rs.next()) {
-				Estudiante e=new Estudiante();
-				e.setId(rs.getInt(1));
-				e.setNombre(rs.getString(2));
-				e.setApellido(rs.getString(3));
-				e.setApellido(rs.getString(4));
-				listaEstudiantes.add(e);
+				Estudiante estudiante=new Estudiante();
+				estudiante.setId(rs.getInt("id"));
+				estudiante.setNombre(rs.getString("nombre"));
+				estudiante.setApellido(rs.getString("apellido"));
+				estudiante.setModulo(rs.getString("modulo"));
+				listaEstudiantes.add(estudiante);
 			}
 			stm.close();
 			rs.close();
