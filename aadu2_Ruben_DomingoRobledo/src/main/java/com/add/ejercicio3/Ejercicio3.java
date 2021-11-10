@@ -18,7 +18,7 @@ public class Ejercicio3 {
 	    String parAdic = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	    String urlConnection = "jdbc:mysql://" + host + ":" + port + "/" + basedatos + parAdic;
 	    String user = "root";
-	    String pwd = "Alcobendas99*";
+	    String pwd = "root";
 
 	    try {
 	            Connection conn = DriverManager.getConnection(urlConnection, user, pwd);
@@ -33,7 +33,7 @@ public class Ejercicio3 {
 			    
 			    System.out.println("Tabla usuarios creada");
 			    
-	            BufferedReader bf = new BufferedReader(new FileReader("C:\\Users\\rubir\\Downloads\\uusarios.csv"));
+	            BufferedReader bf = new BufferedReader(new FileReader("C:\\Users\\Dam2\\Downloads\\uusarios.csv"));
 	            String line = null;
 			    conn.setAutoCommit(false);
 			    System.out.println("Comenzamos transaccion");

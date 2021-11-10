@@ -25,13 +25,14 @@ public class Ejercicio1 {
 			
 			switch (opcion) {
 				case 1:
+					st.execute("DROP TABLE IF EXISTS estudiantes");
 					st.executeUpdate("CREATE TABLE IF NOT EXISTS estudiantes ("
 						+ "id MEDIUMINT NOT NULL AUTO_INCREMENT,"
 						+ "nombre varchar(50),"
 						+ "apellido varchar(50),"
 						+ "modulo varchar(50),"
 						+ "PRIMARY KEY (id));");
-					System.out.println("Table created");
+					System.out.println("Table created"); 
 			
 					st.executeUpdate("INSERT INTO estudiantes (nombre, apellido, modulo) "
 							+ "VALUES ('Juan', 'Pérez', 'Ciencias de la Salud'),"
