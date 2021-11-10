@@ -14,17 +14,20 @@ public class Ejercicio2 {
 	    String user = "root";
 	    String pwd = "root";
 	    
-		//Agregamos primero la dependecia de apache commons dbcp en el pom.xml
+		//Agregamos primero las dependecias de Apache Commons DBCP, HikariCP y C3PO en el pom.xml
+	    //Creamos pool de conexiones
+	    
 		BasicDataSource ds = new BasicDataSource();
 		ds.setUrl(urlConnection);
 		ds.setUsername(user);
 		ds.setPassword(pwd);
  
-		ds.setMinIdle(5);
-		ds.setMaxIdle(10);
+		ds.setMinIdle(2);
+		ds.setMaxIdle(5);
 		try {
 			ds.getConnection();
-		} catch (SQLException e) {
+		} 
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}		
