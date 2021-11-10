@@ -34,14 +34,14 @@ public class Controlador {
 		List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
 		EstudianteDAO dao= new EstudianteDAO_();
 		listaEstudiantes=dao.findAll();
-		vista.verClientes(listaEstudiantes);
+		vista.verEstudiantes(listaEstudiantes);
 	}
 	
 	public void findByName(String name){
 		List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
 		EstudianteDAO dao= new EstudianteDAO_();
 		listaEstudiantes=dao.findByName(name);
-		vista.verClientes(listaEstudiantes);
+		vista.verEstudiantes(listaEstudiantes);
 	}
 	
 	public void removeAll() {

@@ -7,9 +7,9 @@ public class Vista {
 		System.out.println("Datos del Estudiante: "+estudiante);
 	}
 	
-	public void verClientes(List<Estudiante> estudiantes) {
-		for (Estudiante estudiante : estudiantes) {
-			System.out.println("Datos del Estudiante: "+estudiante);
+	public void verEstudiantes(List<Estudiante> listaEstudiantes) {
+		for (Estudiante estudiante : listaEstudiantes) {
+			System.out.println("Datos del Estudiante: "+ estudiante);
 		}		
 	}
 }

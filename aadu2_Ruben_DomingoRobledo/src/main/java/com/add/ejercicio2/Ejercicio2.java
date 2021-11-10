@@ -12,7 +12,7 @@ public class Ejercicio2 {
 	    String parAdic = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	    String urlConnection = "jdbc:mysql://" + host + ":" + port + "/" + basedatos + parAdic;
 	    String user = "root";
-	    String pwd = "Alcobendas99";
+	    String pwd = "root";
 	    
 		//Agregamos primero la dependecia de apache commons dbcp en el pom.xml
 		BasicDataSource ds = new BasicDataSource();

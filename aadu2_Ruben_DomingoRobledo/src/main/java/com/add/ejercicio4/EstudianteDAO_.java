@@ -59,7 +59,7 @@ public class EstudianteDAO_ implements EstudianteDAO{
 			Statement stm=conn.createStatement();
 			ResultSet rs= stm.executeQuery("SELECT * FROM estudiantes WHERE id ='"+id+"'");
 			while (rs.next()) {
-				estudiante.setId(rs.getInt("id"));
+				estudiante.setId(id);
 				estudiante.setNombre(rs.getString("nombre"));
 				estudiante.setApellido(rs.getString("apellido"));
 				estudiante.setModulo(rs.getString("modulo"));

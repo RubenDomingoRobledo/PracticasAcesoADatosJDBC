@@ -49,4 +49,10 @@ public class Estudiante {
 	public void setModulo(String modulo) {
 		this.modulo = modulo;
 	}
+
+	@Override
+	public String toString() {
+		return "id= " + id + ", nombre= " + nombre + ", apellido= " + apellido + ", modulo= " + modulo;
+	}
+	
 }
