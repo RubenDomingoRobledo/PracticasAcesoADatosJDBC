@@ -8,7 +8,7 @@ public class Conexion {
 	public static Connection conectar() {
 		Connection con = null;
 
-		String basedatos = "aadu2";
+		String basedatos = "aduu2";
 	    String host = "localhost";
 	    String port = "3306";
 	    String parAdic = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
