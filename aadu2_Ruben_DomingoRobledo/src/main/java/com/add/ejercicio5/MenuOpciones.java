@@ -11,6 +11,12 @@ public class MenuOpciones {
 	public static void main(String[] args) {
 		Connection conn=Conexion.conectar();
 		
+		Producto p1 = new Producto (1, "Pan", 0.99, true, "Pan artesano recien hecho");
+		Producto p2 = new Producto (2, "Rosquillas", 2.99, false, "Rosquillas hechas con cariño");
+		Producto p3 = new Producto (3, "Palmeras", 3.99, false, "Palmeras de chocolate");
+		Producto p4 = new Producto (4, "Churros", 4.99, true, "Churros o porras");
+		Empresa e1 = new Empresa(1, "Panaderías Paco", "Famosa en el mundo entero", "España", 15000);
+		
 		System.out.println("1. SENTENCIAS DDL ");
 		System.out.println("2. CRUD ");
 		System.out.println("3. BORRAR DATOS ALMACENADOS ");
@@ -35,9 +41,8 @@ public class MenuOpciones {
 							+ "id MEDIUMINT NOT NULL AUTO_INCREMENT,"
 							+ "nombre varchar(50),"
 							+ "precio decimal (7,2),"
-							+ "artesanal char(2) NOT NULL,"
-							+ "PRIMARY KEY (id),"
-							+ "CONSTRAINT ck_artesanal CHECK (artesanal IN ('Si' OR 'N')))");
+							+ "artesanal boolean NOT NULL,"
+							+ "PRIMARY KEY (id))");
 					System.out.println("Tabla producto creada");
 					
 					stm.execute("CREATE TABLE IF NOT EXISTS empresa ("
@@ -108,7 +113,34 @@ public class MenuOpciones {
 			}
 			
 		case 2:
+			System.out.println("1. INSERTAR DATOS");
+			System.out.println("2. LEER DATOS");
+			System.out.println("3. ACTUALIZAR DATOS");
+			System.out.println("4. BORRAR DATOS");
+			System.out.println("Introduzca una opción: ");
+			int opcion4= sc.nextInt();
 			
+			switch(opcion4) {
+			case 1:
+				try {
+					Statement stm= conn.createStatement();
+					stm.execute("INSERT INTO producto values ('"+p1.getId()+"','"+p1.getNombre()+"','"+p1.getPrecio()+"','"+p1.isArtesanal()+"','"+p1.getDescripcion()+"')"
+							+ "('"+p2.getId()+"','"+p2.getNombre()+"','"+p2.getPrecio()+"','"+p2.isArtesanal()+"','"+p2.getDescripcion()+"')"
+							+ "('"+p3.getId()+"','"+p3.getNombre()+"','"+p3.getPrecio()+"','"+p3.isArtesanal()+"','"+p3.getDescripcion()+"')"
+							+ "('"+p4.getId()+"','"+p4.getNombre()+"','"+p4.getPrecio()+"','"+p4.isArtesanal()+"','"+p4.getDescripcion()+"')");
+					
+					System.out.println("");
+					
+					stm.execute("INSERT INTO empresa values ('"+e1.getId()+"','"+e1.getNombre()+"','"+e1.getDescripcion()+"','"+e1.getPais()+"')");
+					stm.close();
+				} 
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+			
+			case 2:
+			}
 		}
 	}
 }
