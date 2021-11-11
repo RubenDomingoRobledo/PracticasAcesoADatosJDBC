@@ -38,6 +38,7 @@ public class Ejercicio3 {
 			    conn.setAutoCommit(false);
 			    System.out.println("Comenzamos transaccion");
 			    
+			    bf.readLine();
 	            PreparedStatement sInsert = conn.prepareStatement("INSERT INTO usuarios (nombre, apellido, mail) VALUES (?,?,?);"); 
 	            while((line =  bf.readLine())!=null){
 	                StringTokenizer st = new StringTokenizer(line, "|");
