@@ -325,7 +325,8 @@ public class MenuOpciones {
 				default:
 					break;
 				}
-			}		
+			}	
+		sc.close();
 		}
 	}
 }
