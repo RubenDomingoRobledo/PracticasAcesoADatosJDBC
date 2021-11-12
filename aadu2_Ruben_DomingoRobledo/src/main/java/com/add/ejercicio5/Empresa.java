@@ -16,6 +16,9 @@ public class Empresa {
 		this.cantidadEmpleados= cantidadEmpleados;
 	}
 	
+	public Empresa() {
+	}
+
 	public int getId() {
 		return id;
 	}

@@ -4,18 +4,19 @@ public class Producto {
 	private int id;
 	private String nombre;
 	private double precio;
-	private boolean artesanal;
 	private String descripcion;
 	
-	public Producto(int id, String nombre, double precio, boolean artesanal, String descripcion) {
+	public Producto(int id, String nombre, double precio, String descripcion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
-		this.artesanal = artesanal;
 		this.descripcion= descripcion;
 	}
 	
+	public Producto() {
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -34,16 +35,10 @@ public class Producto {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	public boolean isArtesanal() {
-		return artesanal;
-	}
-	public void setArtesanal(boolean artesanal) {
-		this.artesanal = artesanal;
-	}
 
 	@Override
 	public String toString() {
-		return "Producto id= " + id + ", nombre= " + nombre + ", precio= " + precio + ", artesanal= " + artesanal;
+		return "Producto id= " + id + ", nombre= " + nombre + ", precio= " + precio;
 	}
 
 	public String getDescripcion() {
